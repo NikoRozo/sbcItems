@@ -4,9 +4,7 @@ import com.niko.sbc.items.models.Item;
 import com.niko.sbc.items.services.ItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -20,7 +18,10 @@ public class ItemController {
     }
 
     @GetMapping
-    public ResponseEntity<?> findAll() {
+    public ResponseEntity<?> findAll(@RequestParam(name = "name", required = false) String name,
+                                     @RequestHeader(name = "token-request", required = false) String token) {
+        System.out.println("Token: " + token);
+        System.out.println("Name: " + name);
         return ResponseEntity.ok(this.service.getAllItems());
     }
 

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "config.baseurl.endpoint.sbcProducts",
+      "type": "java.lang.String",
+      "description": "Description for config.baseurl.endpoint.sbcProducts."
+  }
+] }
